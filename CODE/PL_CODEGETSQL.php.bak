@@ -1,0 +1,26 @@
+<?PHP 
+		
+			###DATA FOR GRID AND VIEW DATABASE SQL#######
+				#-------------------------------------#
+				#DATA QUESTION VERIFIYING 
+				$pl_vqa01_sw = $CL_Q($CONN01,"$CL_SL tqa order by RAND()");
+                        $pl_vqa01_sww = $CL_FAS($pl_vqa01_sw);
+														
+				#DATA USER by SESSION ID
+				 $pl_vusr01_sw = @$CL_Q($CONN01,"$CL_SL srv_user_01 WHERE user_nama_01='$_SESSION[namauser]'");
+					$pl_vusr01_sww = $CL_FAS($pl_vusr01_sw);
+					$pl_nr_vusr01_sww = $CL_NR($pl_vusr01_sw);
+					
+				#DATA TOKEN SS SANDBOX
+				$pl_vsstoken_sw = $CL_Q($CONN01,"$CL_SL sstoken WHERE idmain_token_01=''");
+                        $pl_vsstoken_sww = $CL_FAS($pl_vsstoken_sw);
+					
+			#URL APIs SATU SEHAT #SANDBOX
+				$URI_DATA_AUTH = "https://api-satusehat-stg.dto.kemkes.go.id/oauth2/v1";
+				$URI_DATA_BASE = "https://api-satusehat-stg.dto.kemkes.go.id/fhir-r4/v1";
+				$URI_DATA_CONSENT = "https://api-satusehat-stg.dto.kemkes.go.id/consent/v1";
+					#DATA KEYSTORE
+					$CLIENT_ID = "UrsDBK961YXGHSeGZ3ovobIk0yq24ZEgBawfldKwqIdrT3uT";
+					$CLIENT_SEC = "gGLeOxbQsmyEzTnrmTeuUua6MS6T8VqRzwZf1TSO77lQAj1NBbBbkP4mnCY16R0R";
+					
+?>

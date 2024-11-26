@@ -1,0 +1,1 @@
+<?PHP header("LOCATION:NTS_HOME_01.php"); ?>

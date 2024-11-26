@@ -1,0 +1,28 @@
+<?php
+     //error_reporting(0);
+     $PGSA = @$SQL_SL($_GET['PG_SA']);
+     if($PGSA ==''){ 
+           #echo "<img src='https://rspwc.net/E-PWC/CDN/edis.jpg' class=img-fluid>";
+      ?>
+           <div class="card border-light mb-3 mx-2" style="max-width: 50rem;">
+                  <div class="card-header">Server Information</div>
+                  <div class="card-body">
+				  <textarea class="form-control" rows="40">
+					<?PHP 
+						print_r(json_decode($_SERVER));
+					?>
+					</textarea>
+                  </div>
+            </div>
+     <?PHP }else{
+      switch(@$SQL_SL($PGSA)){
+            #MASTER DATA
+                  case"$PGSA":
+                        include"PLSITE/$PGSA.php";  #DIISI DENGAN NAMA FOLDER FILE
+                  break;
+
+          }
+
+     }
+     
+  ?>

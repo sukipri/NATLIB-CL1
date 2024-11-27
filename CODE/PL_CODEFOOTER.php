@@ -1,5 +1,5 @@
 
-<div style="padding-left:10px;" class="badge bg-primary mx-2">&copy LULABY Allright Reserved - C4mpus <?PHP echo"$DATE_Y"; ?>
+<div style="padding-left:10px;" class="badge bg-primary mx-2">&copy LULABY Allright Reserved - NATLIB <?PHP echo"$DATE_Y"; ?>
 </div>
    <!-- --JS -->
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>

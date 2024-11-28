@@ -25,10 +25,9 @@
 			#DATA FAKULTAS
 			$pl_vw_vfak01_sw = $CL_Q($CONN01,"$CL_SL nts_fak WHERE idmain_fak_01='$IDFAK01'");
 			$pl_vw_vfak01_sww = $CL_FAS($pl_vw_vfak01_sw);
-
 						
 		#--------------LINE------------------------------#
-		
+
 			
 			#--------------LINE------------------------------#
 					

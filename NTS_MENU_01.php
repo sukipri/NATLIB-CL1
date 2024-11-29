@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">NATSET</a>
+    <a class="navbar-brand" href="?">NATLIB-STS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,11 +11,19 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           <i class="fas fa-hashtag"></i> Kejuruan
+           <i class="fas fa-hashtag"></i> Autentifikasi
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?PG_SA=PLMD_FAKULTAS_01">Fakultas</a></li>
-            <li><a class="dropdown-item" href="?PG_SA=PLMD_PRODI_01">Program Studi</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSTOKEN">Set Token</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <i class="fas fa-hashtag"></i> Prerequisites
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">Practitioner</a></li>
           </ul>
         </li>
       </ul>

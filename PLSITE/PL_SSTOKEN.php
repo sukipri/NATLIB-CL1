@@ -52,7 +52,7 @@
 		  <input type="text" class="form-control" placeholder="Username" readonly aria-label="Username" aria-describedby="basic-addon1" value="<?PHP echo $de_json['application_name'] ?>">
 	</div>
 	<br>
-		<button class="btn btn-success btn-sm" name="btn_update_SSAUTH">UPDATE TOKEN</button>
+		<button class="btn btn-success btn-sm" onclick="return simpan_konf()" name="btn_update_SSAUTH">UPDATE TOKEN</button>
 	</form>
 <!-- -->
 </div>

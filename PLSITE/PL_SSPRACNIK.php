@@ -39,11 +39,18 @@
 		echo"<code>$data</code><hr>";
 		echo"<br>";
 		$data_jsonfor =  $data_fetch['entry'];
+
+        foreach($data_jsonfor as $data_jsonfor_get){ #FOREACH ENTRY
+
+            echo"<b>ID SS</b> ".$data_jsonfor_get['resource']['id']."<br>";
+            $data_jsonfor_name = $data_jsonfor_get['resource']['name'];
+            foreach($data_jsonfor_name as $data_jsonfor_nameget ){
+                echo "<b>Name</b> ".$data_jsonfor_nameget['text'];
+            }
+        }
         
 
     }
 ?>
-
-
 <!--  -->
 </div>

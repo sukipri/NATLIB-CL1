@@ -26,6 +26,15 @@
             <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">Practitioner</a></li>
           </ul>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <i class="fas fa-hashtag"></i> Rawat Jalan
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">Practitioner</a></li>
+          </ul>
+        </li>
       </ul>
       <?PHP }else{ ?>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -39,11 +48,11 @@
         <?PHP 
         
             if($pl_nr_vusr01_sww > 0){
-              echo"<a href='#' class='btn btn-primary'><i class='fas fa-user-alt'></i>  $pl_vusr01_sww[user_nama_01]</a>";
+              echo"<a href='#' class='btn btn-primary btn-sm'><i class='fas fa-user-alt'></i>  $pl_vusr01_sww[user_nama_01]</a>";
               echo"&nbsp";
-              echo"<a href='CODE/PL_CODELOGOUT.php' class='btn btn-danger'><i class='fas fa-sign-out-alt'></i> Logout</a>";
+              echo"<a href='CODE/PL_CODELOGOUT.php' class='btn btn-danger btn-sm'><i class='fas fa-sign-out-alt'></i> Logout</a>";
             }else{
-              echo"<a href='?PG_SA=Pl_SITELOGIN' class='btn btn-warning'><i class='fas fa-sign-in-alt'></i> L.O.G.I.N</a>";
+              echo"<a href='?PG_SA=Pl_SITELOGIN' class='btn btn-warning btn-sm'><i class='fas fa-sign-in-alt'></i> L.O.G.I.N</a>";
             }
         ?>
       </form>

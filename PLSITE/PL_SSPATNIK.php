@@ -1,10 +1,10 @@
 <br>
 <div class="container">
-<b>Practitioner #1 SATU SEHAT *NIK</b>
+<b>Patient #1 SATU SEHAT *NIK</b>
 <hr>
 <form method="post">
 	<div class="input-group mb-3" style="max-width:30rem;">
-	  <input type="text" class="form-control" required required name="txt_src_ssprac01" autocomplete="off" placeholder="Masukan NIK Praktisi Medis........">
+	  <input type="text" class="form-control" required required name="txt_src_ssprac01" autocomplete="off" placeholder="Masukan NIK Pasien........">
 	  <button class="btn btn-success btn-sm" name="btn_src_ssencounter01">CARI</button>
 	</div>
 </form>
@@ -17,7 +17,7 @@
 		#-----------#
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
-		CURLOPT_URL => "$URI_DATA_BASE/Practitioner?identifier=$txt_isi",
+		CURLOPT_URL => "$URI_DATA_BASE/Patient?identifier=$txt_isi",
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => "",
 		CURLOPT_MAXREDIRS => 10,

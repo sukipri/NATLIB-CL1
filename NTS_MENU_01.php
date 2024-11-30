@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="?">NATLIB-STS</a>
+    <a class="navbar-brand" href="?"><i class="fas fa-home"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,7 +23,8 @@
            <i class="fas fa-hashtag"></i> Prerequisites
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">Practitioner</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">Practitioner</a></li>  
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSPATNIK">Patient</a></li>
           </ul>
         </li>
 
@@ -32,7 +33,7 @@
            <i class="fas fa-hashtag"></i> Rawat Jalan
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">Practitioner</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">EN01.Kunjungan Baru</a></li>
           </ul>
         </li>
       </ul>

@@ -33,7 +33,7 @@
            <i class="fas fa-hashtag"></i> Rawat Jalan
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">EN01.Kunjungan Baru</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ01">EN01.Kunjungan Baru</a></li>
           </ul>
         </li>
       </ul>

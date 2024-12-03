@@ -2,52 +2,44 @@
 <div class="container">
 <b>Rawat Jalan #1 Kunjungan Awal</b>
 <hr>
-<div class="card border-primary mb-3" style="max-width: 40rem;">
-  <div class="card-header">Upload Kunjungan Awal</div>
-  <div class="card-body">
-    <!--  -->
-    <form method="post" enctype="multipart/form-data">
-    <div class="input-group mb-3">
-        <input type="file" class="form-control form-control-sm" name="data_csv" required>
-        <button class="btn btn-success btn-sm" name="btn_simpancsv">Upload</button>
-    </div>
-    </form>
-    <!--  -->
-    <?PHP 
-    if(isset($_POST['btn_simpancsv'])){
-        $output = ''; 
-        
-        $format_file = array("csv"); 
+
+<div class="panel panel-success" style="max-width:20rem;">
+  <div class="panel-body">
+    <?php
+
+    if (isset($_POST['kom_upload_01'])) {//Script akan berjalan jika di tekan tombol submit..
     
-        $extension = end(explode(" . ", $_FILES["data_csv"]["name"])); 
-
-            if(in_array($extension, $format_file)){ 
-        
-                  $file_data = fopen($_FILES["data_csv"]["tmp_name"], 'r'); 
-        
-                  fgetcsv($file_data); 
-        
-                  while($row = fgetcsv($file_data)){ 
-        
-                      $name = mysqli_real_escape_string($CONN01, $row[0]); 
-                      $email = mysqli_real_escape_string($CONN01, $row[1]);
-                      $data3 = mysqli_real_escape_string($CONN01, $row[2]);
-        
-                      #$query = "INSERT INTO import VALUES ('','$name', '$email')"; 
-                      echo $name;
-
-        
-                      #mysqli_query($CONN01, $query); 
-        
-                  } 
-                }
+    //Script Upload File..
+        if (is_uploaded_file($_FILES['filename']['tmp_name'])) {
+            echo "<h1>" . "File ". $_FILES['filename']['name'] ." Berhasil di Upload" . "</h1>";
+            echo "<h2>Menampilkan Hasil Upload:</h2>";
+            readfile($_FILES['filename']['tmp_name']);
         }
-
     
+        //Import uploaded file to Database, Letakan dibawah sini..
+        $handle = fopen($_FILES['filename']['tmp_name'], "r"); //Membuka file dan membacanya
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            #$import="$in TGaji (GajiBulan,KaryNomor,UnitKode,GajiStKeluarga,GajiStPPh,GajiASTEK)VALUES()"; //data array sesuaikan dengan jumlah kolom pada CSV anda mulai dari “0” bukan “1”
+            $save_rjkj_01 = $CL_Q($CONN01,"$IN nat_rjkj1()VALUES()");
+            echo $data['0'];
+           # $ms_q($import) or die(mssql_error()); //Melakukan Import
+        }
+    
+        fclose($handle); //Menutup CSV file
+        echo "<br><strong>Import data selesai.</strong>";
+        
+    }else { //Jika belum menekan tombol submit, form dibawah akan muncul.. ?>
+    
+    <!-- Form Untuk Upload File CSV-->
+    <form enctype='multipart/form-data' action='' method='post'>
+        <input type='file' required name='filename' size='100' class="form-control">
+        <br>
+        <input type='submit' name='kom_upload_01' value='Upload' class="btn btn-success btn-sm">
 
-    ?>
-    <!--  -->
-  </div>
-</div>
+
+    </form>
+    <?php } @mysqli_close(); //Menutup koneksi SQL?> 
+    </div>
+    </div>
 <!--  -->
 </div>

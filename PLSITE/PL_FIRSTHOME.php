@@ -1,8 +1,6 @@
 <div class="card">
- <div class="headimg">
-    
+ <div class="headimg"><br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> Satu Sehat A.P.I</a>
-   
  </div>
 </div>
 <br>

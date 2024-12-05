@@ -1,8 +1,7 @@
+<?PHP if($pl_nr_vusr01_sww  > 0){ ?>
 <div class="card">
- <div class="headimg">
-    
+ <div class="headimg"><br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> Patient #1 SATU SEHAT *NIK</a>
-   
  </div>
 </div>
 <br>
@@ -59,3 +58,4 @@
 ?>
 <!--  -->
 </div>
+<?PHP }else { echo"<b>Akses Dibatasi </b>"; } ?>

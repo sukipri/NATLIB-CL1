@@ -1,5 +1,5 @@
 <div class="card">
- <div class="headimg">
+ <div class="headimg"> <br>
  <a href='#' class="btn btn-secondary  mx-1"><i class="fas fa-project-diagram"></i> Login Akses</a>
  </div>
 </div>

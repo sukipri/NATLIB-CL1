@@ -1,18 +1,18 @@
 <div class="card">
- <div class="headimg">
-    
+ <div class="headimg"> <br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #1 Kunjungan Awal Dataview Pending</a>
-   
  </div>
 </div>
 <br>
 <div class="container">
+    <b>*Data yang belum terunggah</b>
 <table class="table table-sm table-bordered table-striped">
     <tr class="table-dark">
         <td width="7%">ID</td>
         <td>NIK Pasien</td>
         <td>NIK Dokter</td>
         <td>Location</td>
+        <td>Tgl Periksa</td>
         <td>Aksi</td>
     </tr>
     <?PHP 
@@ -25,6 +25,7 @@
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_nikpasien_01'] ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_nikdokter_01'] ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_lokid_01'] ?></td>
+        <td><?PHP echo $pl_vrjkj1_sww['rjkj1_tglmasuk_01'] ?></td>
         <td>
             <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ01VIEW&IDDOK01=$pl_vrjkj1_sww[rjkj1_nikdokter_01]&IDPSN01=$pl_vrjkj1_sww[rjkj1_nikpasien_01]&GETKJ01=GETKJ01' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>"; ?>
         </td>
@@ -105,7 +106,7 @@ $txt_isi2 = "https://fhir.kemkes.go.id/id/nik|$IDPSN01";
 #-----------#
 foreach($data2_jsonfor as $data2_jsonfor_get){ 
     echo $data2_jsonfor_get['resource']['id'];
-/
+
  }
     }
 ?>

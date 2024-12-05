@@ -1,7 +1,12 @@
+<div class="card">
+ <div class="headimg">
+    
+        <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> Patient #1 SATU SEHAT *NIK</a>
+   
+ </div>
+</div>
 <br>
 <div class="container">
-<b>Patient #1 SATU SEHAT *NIK</b>
-<hr>
 <form method="post">
 	<div class="input-group mb-3" style="max-width:30rem;">
 	  <input type="text" class="form-control" required required name="txt_src_ssprac01" autocomplete="off" placeholder="Masukan NIK Pasien........">

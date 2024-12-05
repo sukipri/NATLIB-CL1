@@ -3,7 +3,8 @@
 				#VARIABLE GET ID AND VIEW
 				$TG01 = @$SQL_SL($_GET['TG01']); #GET ID Tanggal 1
 				$TG02 = @$SQL_SL($_GET['TG02']); #GET ID Tanggal 2
-				$IDFAK01 = @$SQL_SL($_GET['IDFAK01']); #GET ID FAKULTAS
+				$IDDOK01 = @$SQL_SL($_GET['IDDOK01']); #GET ID NIK DOKTER 
+				$IDPSN01 = @$SQL_SL($_GET['IDPSN01']); #GET ID NIK PASIEN 
 				
 
 			###DATA FOR GRID AND VIEW DATABASE SQL#######
@@ -29,6 +30,8 @@
 		$URI_DATA_AUTH = "https://api-satusehat-stg.dto.kemkes.go.id/oauth2/v1";
 		$URI_DATA_BASE = "https://api-satusehat-stg.dto.kemkes.go.id/fhir-r4/v1";
 		$URI_DATA_CONSENT = "https://api-satusehat.dto.kemkes.go.id/consent/v1";
+		$ID_UKP = "962175e9-70fe-45fd-8ead-8f763529f527";
+		$ID_POLI = "e287edb4-f2d6-4528-ba35-774bf22e55b4";
 			#DATA KEYSTORE
 			$ORG_ID = "a33ade0f-a26c-45e0-a19f-e206e1ccc255";
 			$CLIENT_ID = "iT2YW5uENnrQ5SJEYXntkEEvHX1QY0AgxWmcT1X8f4VboG0d";

@@ -1,3 +1,4 @@
+<?PHP if($pl_nr_vusr01_sww  > 0){ ?>
 <div class="card">
  <div class="headimg"> <br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> Rawat Jalan #1 Kunjungan Awal</a>
@@ -46,3 +47,4 @@
     </div>
 <!--  -->
 </div>
+<?PHP }else { echo"<b>Akses Dibatasi </b>"; } ?>

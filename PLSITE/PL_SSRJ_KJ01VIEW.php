@@ -1,3 +1,4 @@
+<?PHP if($pl_nr_vusr01_sww  > 0){ ?>
 <div class="card">
  <div class="headimg"> <br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #1 Kunjungan Awal Dataview Pending</a>
@@ -112,3 +113,4 @@ foreach($data2_jsonfor as $data2_jsonfor_get){
 ?>
         <!--  -->
             </div>
+            <?PHP }else { echo"<b>Akses Dibatasi </b>"; } ?>

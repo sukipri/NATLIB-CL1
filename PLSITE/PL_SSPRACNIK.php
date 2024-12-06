@@ -1,4 +1,4 @@
-
+<?PHP if($pl_nr_vusr01_sww  > 0){ ?>
 <div class="card">
  <div class="headimg"><br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> Practitioner #1 SATU SEHAT *NIK</a>
@@ -10,6 +10,7 @@
 	<div class="input-group mb-3" style="max-width:30rem;">
 	  <input type="text" class="form-control" required required name="txt_src_ssprac01" autocomplete="off" placeholder="Masukan NIK Praktisi Medis........">
 	  <button class="btn btn-success btn-sm" name="btn_src_ssencounter01">CARI</button>
+	  <a href="?PG_SA=PL_SSPRACIN" class="btn btn-dark btn-sm"><i class="fas fa-plus"></i> Set Dokter</a>
 	</div>
 </form>
 
@@ -58,3 +59,4 @@
 ?>
 <!--  -->
 </div>
+<?PHP }else { echo"<b>Akses Dibatasi </b>"; } ?>

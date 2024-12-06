@@ -22,6 +22,10 @@
 				$pl_vsstoken_sw = $CL_Q($CONN01,"$CL_SL sstoken WHERE idmain_token_01='SS10001'");
                         $pl_vsstoken_sww = $CL_FAS($pl_vsstoken_sw);
 
+				#DATA DOKTER
+				$pl_vw_vdkt01_sw = $CL_Q($CONN01,"$CL_SL nat_dokter WHERE idmain_dokter='$IDDOK01'");
+                    $pl_vw_vdkt01_sww = $CL_FAS($pl_vw_vdkt01_sw);
+
 			
 						
 		#--------------LINE------------------------------#

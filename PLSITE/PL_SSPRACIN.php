@@ -19,14 +19,45 @@
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nama Dokter</span>
-       <input type="text" class="form-control form-control-sm" required name="dokter_nama_01" autocomplete="off">
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">SS ID Dokter</span>
-       <input type="text" class="form-control form-control-sm" required name="dokter_idss_01" autocomplete="off">
+       <input type="text" class="form-control form-control-sm" required name="dokter_nama_01" autocomplete="off" value="<?PHP echo @$pl_vw_vdkt01_sww['dokter_nama_01'] ?>">
     </div>
     <br>
     <?PHP 
+     if(isset($_GET['UPDKT01'])){
+         $txt_isi = "https://fhir.kemkes.go.id/id/nik|$pl_vw_vdkt01_sww[dokter_nik_01]";
+         #-----------#
+         $curl = curl_init();
+         curl_setopt_array($curl, array(
+         CURLOPT_URL => "$URI_DATA_BASE/Practitioner?identifier=$txt_isi",
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => "",
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 0,
+         CURLOPT_FOLLOWLOCATION => true,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => "GET",
+         CURLOPT_HTTPHEADER => array(
+         "Authorization: Bearer $pl_vsstoken_sww[token_isi_01]"
+           ),
+          ));
+     
+         $response = curl_exec($curl);
+         $en_json = json_encode($response);
+         $data = json_decode($en_json, true);
+         $data_fetch = json_decode($response, true);
+         
+         #echo"<textarea rows=10 cols=70>$data</textarea><hr>";
+         #echo"<code>$data</code>";
+         $data_jsonfor =  $data_fetch['entry'];
+     foreach($data_jsonfor as $data_jsonfor_get){ 
+         $txt_jsondata = $data_jsonfor_get['resource']['id'];
+         echo"<input type='text' class='form-control form-control-sm' value=$txt_jsondata required name='dokter_idss_01'>";
+     
+      } 
+    }
+
+
+    echo"<br>";
         if(@$SQL_SL($_GET['UPDKT01'])){
             echo"<button class='btn btn-warning btn-sm' name='btn_updatedok'>Update Data</button>";
         }else{

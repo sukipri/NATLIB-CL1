@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2024 at 11:43 AM
+-- Generation Time: Dec 06, 2024 at 04:42 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `natcl1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nat_dokter`
+--
+
+CREATE TABLE `nat_dokter` (
+  `idmain_dokter` varchar(60) NOT NULL,
+  `dokter_nik_01` varchar(60) NOT NULL,
+  `dokter_idss_01` varchar(60) NOT NULL,
+  `dokter_nama_01` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nat_dokter`
+--
+
+INSERT INTO `nat_dokter` (`idmain_dokter`, `dokter_nik_01`, `dokter_idss_01`, `dokter_nama_01`) VALUES
+('ODk4Njc5241206024858', '7209061211900001', '-', 'dr. Alexander');
 
 -- --------------------------------------------------------
 
@@ -41,8 +61,8 @@ CREATE TABLE `nat_rjkj1` (
 --
 
 INSERT INTO `nat_rjkj1` (`idmain_rjkj1`, `rjkj1_nikpasien_01`, `rjkj1_nikdokter_01`, `rjkj1_lokid_01`, `rjkj1_tglmasuk_01`, `rjkj1_status_01`) VALUES
-('1001', '9204014804000002', '7209061211900001', 'e287edb4-f2d6-4528-ba35-774bf22e55b4', '0000-00-00', '1'),
-('1002', '9201076001000007', '3217040109800006', 'e287edb4-f2d6-4528-ba35-774bf22e55b4', '0000-00-00', '1');
+('1001', '9201076001000007', '3207192310600004', 'e287edb4-f2d6-4528-ba35-774bf22e55b4', '2024-12-04', '1'),
+('1002', '9201394901000008', '6408130207800005', 'e287edb4-f2d6-4528-ba35-774bf22e55b4', '2024-12-05', '1');
 
 -- --------------------------------------------------------
 
@@ -89,7 +109,7 @@ CREATE TABLE `sstoken` (
 --
 
 INSERT INTO `sstoken` (`token_isi_01`, `token_status_01`, `idmain_token_01`) VALUES
-('rfxq97QwoYhvJGVEwL4yk9yi8Aju', '2', 'SS10001');
+('tormMaZkPPNL5A72eYxeCc74dBO3', '2', 'SS10001');
 
 -- --------------------------------------------------------
 
@@ -119,6 +139,12 @@ INSERT INTO `tqa` (`idmain_qa_01`, `qa_kode_01`, `qa_01`, `qa_02`, `ket`, `statu
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `nat_dokter`
+--
+ALTER TABLE `nat_dokter`
+  ADD PRIMARY KEY (`idmain_dokter`);
 
 --
 -- Indexes for table `nat_rjkj1`

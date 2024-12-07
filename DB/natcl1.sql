@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2024 at 04:42 AM
+-- Generation Time: Dec 07, 2024 at 06:30 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -39,7 +39,9 @@ CREATE TABLE `nat_dokter` (
 --
 
 INSERT INTO `nat_dokter` (`idmain_dokter`, `dokter_nik_01`, `dokter_idss_01`, `dokter_nama_01`) VALUES
-('ODk4Njc5241206024858', '7209061211900001', '-', 'dr. Alexander');
+('ODk4Njc5241206024858', '7209061211900001', '10009880728', 'dr. Alexander'),
+('OTE2NzU1241207015035', '6408130207800005', '10018180913', 'dr. Dito Arifin, Sp.M.'),
+('OTM4ODkw241207015058', '3207192310600004', '10010910332', 'dr. Nicholas Evan, Sp.B.');
 
 -- --------------------------------------------------------
 
@@ -50,19 +52,12 @@ INSERT INTO `nat_dokter` (`idmain_dokter`, `dokter_nik_01`, `dokter_idss_01`, `d
 CREATE TABLE `nat_rjkj1` (
   `idmain_rjkj1` varchar(50) NOT NULL,
   `rjkj1_nikpasien_01` varchar(50) NOT NULL,
+  `rjkj1_namapasien_01` varchar(100) NOT NULL,
   `rjkj1_nikdokter_01` varchar(50) NOT NULL,
   `rjkj1_lokid_01` varchar(50) NOT NULL,
   `rjkj1_tglmasuk_01` date NOT NULL,
   `rjkj1_status_01` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `nat_rjkj1`
---
-
-INSERT INTO `nat_rjkj1` (`idmain_rjkj1`, `rjkj1_nikpasien_01`, `rjkj1_nikdokter_01`, `rjkj1_lokid_01`, `rjkj1_tglmasuk_01`, `rjkj1_status_01`) VALUES
-('1001', '9201076001000007', '3207192310600004', 'e287edb4-f2d6-4528-ba35-774bf22e55b4', '2024-12-04', '1'),
-('1002', '9201394901000008', '6408130207800005', 'e287edb4-f2d6-4528-ba35-774bf22e55b4', '2024-12-05', '1');
 
 -- --------------------------------------------------------
 
@@ -109,7 +104,7 @@ CREATE TABLE `sstoken` (
 --
 
 INSERT INTO `sstoken` (`token_isi_01`, `token_status_01`, `idmain_token_01`) VALUES
-('tormMaZkPPNL5A72eYxeCc74dBO3', '2', 'SS10001');
+('r7ySW2w4NoAxgXzuNWXEACrqvhGL', '2', 'SS10001');
 
 -- --------------------------------------------------------
 

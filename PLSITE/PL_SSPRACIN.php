@@ -51,7 +51,10 @@
          $data_jsonfor =  $data_fetch['entry'];
      foreach($data_jsonfor as $data_jsonfor_get){ 
          $txt_jsondata = $data_jsonfor_get['resource']['id'];
-         echo"<input type='text' class='form-control form-control-sm' value=$txt_jsondata required name='dokter_idss_01'>";
+     echo"  <div class='input-group mb-3'>
+        <span class='input-group-text' id='basic-addon1'>ID SatuSehat</span>
+         <input type='text' class='form-control form-control-sm' value=$txt_jsondata required name='dokter_idss_01'>
+    </div>";
      
       } 
     }

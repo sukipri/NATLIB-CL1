@@ -25,7 +25,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?PG_SA=PL_SSPRACNIK">Practitioner</a></li>  
             <li><a class="dropdown-item" href="?PG_SA=PL_SSPATNIK">Patient</a></li>
-            <li><a class="dropdown-item" href="?PG_SA=PL_SSPATNIK">Location / Poli<a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSLOCNAME">Location / Poli<a></li>
           </ul>
         </li>
 

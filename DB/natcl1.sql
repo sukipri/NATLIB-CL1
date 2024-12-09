@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2024 at 06:30 AM
+-- Generation Time: Dec 09, 2024 at 06:37 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -56,8 +56,17 @@ CREATE TABLE `nat_rjkj1` (
   `rjkj1_nikdokter_01` varchar(50) NOT NULL,
   `rjkj1_lokid_01` varchar(50) NOT NULL,
   `rjkj1_tglmasuk_01` date NOT NULL,
-  `rjkj1_status_01` varchar(10) NOT NULL
+  `rjkj1_status_01` varchar(10) NOT NULL,
+  `rjkj1_idssen_01` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nat_rjkj1`
+--
+
+INSERT INTO `nat_rjkj1` (`idmain_rjkj1`, `rjkj1_nikpasien_01`, `rjkj1_namapasien_01`, `rjkj1_nikdokter_01`, `rjkj1_lokid_01`, `rjkj1_tglmasuk_01`, `rjkj1_status_01`, `rjkj1_idssen_01`) VALUES
+('1001', '9271060312000001', 'NO-NAME', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-12-04', '1', 'a7fe8692-57c2-4bb4-96f9-4391ef78d346'),
+('1002', '9204014804000002', 'NO-NAME', '3207192310600004', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-12-05', '1', '2692408d-56fa-4a0b-a927-d01899069b45');
 
 -- --------------------------------------------------------
 
@@ -104,7 +113,7 @@ CREATE TABLE `sstoken` (
 --
 
 INSERT INTO `sstoken` (`token_isi_01`, `token_status_01`, `idmain_token_01`) VALUES
-('r7ySW2w4NoAxgXzuNWXEACrqvhGL', '2', 'SS10001');
+('N8fw0rjucbwlbFnDsBlrq1NyxR1h', '2', 'SS10001');
 
 -- --------------------------------------------------------
 

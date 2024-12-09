@@ -19,6 +19,8 @@
         <td>Aksi</td>
     </tr>
     <?PHP 
+        $pl_timzone01 = "T$TIME_HTML5";
+
         #DATA Kunjungan Awal
         $pl_vrjkj1_sw = $CL_Q($CONN01," $CL_SL nat_rjkj1 WHERE rjkj1_status_01='1' order by rjkj1_tglmasuk_01 desc");
             while($pl_vrjkj1_sww = $CL_FAS($pl_vrjkj1_sw)){
@@ -69,7 +71,11 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_lokid_01']; ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_tglmasuk_01'] ?></td>
         <td>
-            <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ01VIEW&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&GETKJ01=GETKJ01' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>"; ?>
+            <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ01VIEW&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&GETKJIN=GETKJIN' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>";
+                if(@$SQL_SL($_GET['GETKJIN'])){
+                    #echo"<META HTTP-EQUIV='Refresh' Content='0; URL=?PG_SA=PL_SSRJ_KJ01VIEW&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]GETKJ01=GETKJ01&GETKJIN=GETKJIN'>";
+                }
+            ?>
         </td>
     </tr>
     <?PHP } } ?>
@@ -78,13 +84,15 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
         <br><br>
         <?php
 if(isset($_GET['GETKJ01'])){
+    #GET VIEW DATA DOKTER
+    $pl_get_vdkt01_sw = $CL_Q($CONN01,"$SL dokter_idss_01,dokter_nama_01 FROM nat_dokter WHERE dokter_idss_01='$IDSSDOK01' ");
+                $pl_get_vdkt01_sww = $CL_FAS($pl_get_vdkt01_sw);
 // Encode some data with a maximum depth  of 4 (array -> array -> array -> string)
 $data = array(
     "resourceType" => "Encounter",
     "identifier" => array(
         array(
-            "system" => "http://sys-ids.kemkes.go.id/encounter/$ORG_ID",
-            "value" => "$IDSSPSN01"
+            "system" => "http://sys-ids.kemkes.go.id/encounter/$ORG_ID", 
         )
     ),
     "status" => "arrived",
@@ -95,7 +103,7 @@ $data = array(
     ),
     "subject" => array(
         "reference" => "Patient/$IDSSPSN01",
-        "display" => "$pl_ls_vpsn01_sww[PasienNama]"
+        "display" => "Claudia Sintia"
     ),
     "participant" => array(
         array(
@@ -112,7 +120,7 @@ $data = array(
             ),
             "individual" => array(
                 "reference" => "Practitioner/$IDSSDOK01",
-                "display" => "$pl_sl_vdkt01_sww[dokter_nama_01]"
+                "display" => "$pl_get_vdkt01_sww[dokter_nama_01]"
             )
         )
     ),
@@ -122,8 +130,8 @@ $data = array(
     "location" => array(
         array(
             "location" => array(
-                "reference" => "Location/$pl_vrjkj1_sww[rjkj1_lokid_01];",
-                "display" => "$pl_vrjkj1_sww[rjkj1_lokid_01];"
+                "reference" => "Location/$IDSSPOLI01",
+                "display" => "TEST POLI"
             ),
             "extension" => array(
                 array(
@@ -175,12 +183,17 @@ $data = array(
 		curl_close($curl);
 		#echo"<code>". $result['status']."</code>";
 		echo"#RESULT FEEDBACK Satu Sehat<br><code>".$result02."</code><br>"; 
-		echo "<br>".$get_json =  $result['id'];
+		echo "<br>".$get_json =  @$result['id'];
 		#PROCCESSING UPDATE POLI SQL SERVER
         $up_rj_01 = @$CLS_Q($connsrv,"$UP Citarum.dbo.TRawatJalan SET SatuSehatIDEN='$get_json',SatuSehatStatus='2' WHERE JalanNoReg='$IDGET01'");
 		#$up_poli_01 = @$CLS_Q($connsrv,"$UP Citarum.dbo.TPoliSS SET PoliSatuSehatID='$get_json'  WHERE PoliKode='$IDPOLI01'");
-		echo "<META HTTP-EQUIV='Refresh' Content='1; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";
+		#echo "<META HTTP-EQUIV='Refresh' Content='1; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";
+        if($result['resourceType']=="OperationOutcome"){
+            include"NOTIF/NF_FAILED_01.php";
+        }else{
+        $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='2',rjkj1_idssen_01='$get_json'");
         include"NOTIF/NF_SUCCESS_01.php";
+        }
     }
     #echo "<META HTTP-EQUIV='Refresh' Content='13; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";
     

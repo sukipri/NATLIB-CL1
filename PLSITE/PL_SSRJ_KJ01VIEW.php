@@ -11,6 +11,7 @@
     <tr class="table-dark">
         <td width="7%">ID</td>
         <td>NIK Pasien</td>
+        <td>Nama Pasien</td>
         <td class="table-success">ID SS Pasien</td>
         <td>NIK Dokter</td>
         <td class="table-success">ID SS Dokter</td>
@@ -65,13 +66,14 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
     <tr>
         <td><?PHP echo $pl_vrjkj1_sww['idmain_rjkj1'] ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_nikpasien_01']; ?></td>
+        <td><?PHP echo $pl_vrjkj1_sww['rjkj1_namapasien_01']; ?></td>
         <td><?PHP echo  $data2_jsonfor_get['resource']['id']; ?> </td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_nikdokter_01'] ?></td>
         <td><?PHP echo  $pl_sl_vdkt01_sww['dokter_idss_01']; ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_lokid_01']; ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_tglmasuk_01'] ?></td>
         <td>
-            <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ01VIEW&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&GETKJIN=GETKJIN' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>";
+            <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ01VIEW&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&GETKJIN=GETKJIN&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>";
                 if(@$SQL_SL($_GET['GETKJIN'])){
                     #echo"<META HTTP-EQUIV='Refresh' Content='0; URL=?PG_SA=PL_SSRJ_KJ01VIEW&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]GETKJ01=GETKJ01&GETKJIN=GETKJIN'>";
                 }
@@ -86,7 +88,12 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
 if(isset($_GET['GETKJ01'])){
     #GET VIEW DATA DOKTER
     $pl_get_vdkt01_sw = $CL_Q($CONN01,"$SL dokter_idss_01,dokter_nama_01 FROM nat_dokter WHERE dokter_idss_01='$IDSSDOK01' ");
-                $pl_get_vdkt01_sww = $CL_FAS($pl_get_vdkt01_sw);
+         $pl_get_vdkt01_sww = $CL_FAS($pl_get_vdkt01_sw);
+    #GET VIEW DATA RJKJ
+    $pl_get_vrjkj01_sw = $CL_Q($CONN01,"$SL idmain_rjkj1, rjkj1_namapasien_01 FROM nat_rjkj1 WHERE idmain_rjkj1='$IDRJKJ01'");
+        $pl_get_vrjkj01_sww = $CL_FAS($pl_get_vrjkj01_sw);
+        echo $pl_get_vrjkj01_sww['rjkj1_namapasien_01'];
+
 // Encode some data with a maximum depth  of 4 (array -> array -> array -> string)
 $data = array(
     "resourceType" => "Encounter",
@@ -103,7 +110,7 @@ $data = array(
     ),
     "subject" => array(
         "reference" => "Patient/$IDSSPSN01",
-        "display" => "Claudia Sintia"
+        "display" => "$pl_get_vrjkj01_sww[rjkj1_namapasien_01]"
     ),
     "participant" => array(
         array(
@@ -185,13 +192,12 @@ $data = array(
 		echo"#RESULT FEEDBACK Satu Sehat<br><code>".$result02."</code><br>"; 
 		echo "<br>".$get_json =  @$result['id'];
 		#PROCCESSING UPDATE POLI SQL SERVER
-        $up_rj_01 = @$CLS_Q($connsrv,"$UP Citarum.dbo.TRawatJalan SET SatuSehatIDEN='$get_json',SatuSehatStatus='2' WHERE JalanNoReg='$IDGET01'");
 		#$up_poli_01 = @$CLS_Q($connsrv,"$UP Citarum.dbo.TPoliSS SET PoliSatuSehatID='$get_json'  WHERE PoliKode='$IDPOLI01'");
 		#echo "<META HTTP-EQUIV='Refresh' Content='1; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";
         if($result['resourceType']=="OperationOutcome"){
             include"NOTIF/NF_FAILED_01.php";
         }else{
-        $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='2',rjkj1_idssen_01='$get_json'");
+        $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='2',rjkj1_idssen_01='$get_json' WHERE idmain_rjkj1='$IDRJKJ01' ");
         include"NOTIF/NF_SUCCESS_01.php";
         }
     }

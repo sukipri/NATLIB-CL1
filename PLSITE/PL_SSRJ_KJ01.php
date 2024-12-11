@@ -22,7 +22,7 @@
         $handle = fopen($_FILES['filename']['tmp_name'], "r"); //Membuka file dan membacanya
         $no_kj = 1;
         while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-            $save_rjkj_01 = $CL_Q($CONN01,"$IN nat_rjkj1(idmain_rjkj1,rjkj1_nikpasien_01,rjkj1_namapasien_01,rjkj1_nikdokter_01,rjkj1_lokid_01,rjkj1_tglmasuk_01,rjkj1_status_01)VALUES('$data[0]','$data[1]','NO-NAME','$data[2]','$data[3]','$data[4]','1')");
+            $save_rjkj_01 = $CL_Q($CONN01,"$IN nat_rjkj1(idmain_rjkj1,rjkj1_nikpasien_01,rjkj1_namapasien_01,rjkj1_nikdokter_01,rjkj1_lokid_01,rjkj1_tglmasuk_01,rjkj1_status_01)VALUES('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','1')");
             if($save_rjkj_01){
                 echo"<b class='badge bg-success'>Terkirim $data[0]</b>";
             }

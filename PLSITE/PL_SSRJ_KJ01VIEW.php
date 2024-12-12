@@ -2,7 +2,11 @@
 <div class="card">
  <div class="headimg"> <br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #1 Kunjungan Awal Dataview Pending</a>
- </div>
+        &nbsp
+        <a href="#" class="btn btn-dark btn-sm"> <i class="fas fa-bookmark"></i> Data Terikirim</a>
+        &nbsp
+        <a href="#" class="btn btn-dark btn-sm"> <i class="fas fa-bookmark"></i> Data Gagal Terikirim</a>
+</div>
 </div>
 <br>
 <div class="container">
@@ -54,7 +58,7 @@
         #echo"<textarea rows=10 cols=70>$data2</textarea><hr>";
         #echo"<code>$data2</code>";
         echo"<br>";
-        $data2_jsonfor =  $data2_fetch['entry'];
+        $data2_jsonfor =  @$data2_fetch['entry'];
              
 ?>
 <?PHP 
@@ -75,14 +79,14 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
         <td>
             <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ01VIEW&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&GETKJIN=GETKJIN&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>";
                 if(@$SQL_SL($_GET['GETKJIN'])){
-                    #echo"<META HTTP-EQUIV='Refresh' Content='0; URL=?PG_SA=PL_SSRJ_KJ01VIEW&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]GETKJ01=GETKJ01&GETKJIN=GETKJIN'>";
+                    echo"<META HTTP-EQUIV='Refresh' Content='0; URL=?PG_SA=PL_SSRJ_KJ01VIEW&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]'>";
                 }
             ?>
         </td>
     </tr>
     <?PHP } } ?>
 </table>
-        <a href="#" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i> Upload >> SS</a>
+        <a href="<?PHP echo"?PG_SA=PL_SSRJ_KJ01VIEW&GETKJIN=GETKJIN"; ?>" class="btn btn-success btn-sm"><i class="fas fa-paper-plane"></i> Upload >> SS</a>
         <br><br>
         <?php
 if(isset($_GET['GETKJ01'])){
@@ -191,14 +195,15 @@ $data = array(
 		#echo"<code>". $result['status']."</code>";
 		echo"#RESULT FEEDBACK Satu Sehat<br><code>".$result02."</code><br>"; 
 		echo "<br>".$get_json =  @$result['id'];
-		#PROCCESSING UPDATE POLI SQL SERVER
-		#$up_poli_01 = @$CLS_Q($connsrv,"$UP Citarum.dbo.TPoliSS SET PoliSatuSehatID='$get_json'  WHERE PoliKode='$IDPOLI01'");
-		#echo "<META HTTP-EQUIV='Refresh' Content='1; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";
+
+		#PROCCESSING UPDATE MYSQL
         if($result['resourceType']=="OperationOutcome"){
             include"NOTIF/NF_FAILED_01.php";
+            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='3' WHERE idmain_rjkj1='$IDRJKJ01' ");
         }else{
         $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='2',rjkj1_idssen_01='$get_json' WHERE idmain_rjkj1='$IDRJKJ01' ");
         include"NOTIF/NF_SUCCESS_01.php";
+		echo "<META HTTP-EQUIV='Refresh' Content='1; URL=?PG_SA=PL_SSRJ_KJ01VIEW&GETKJIN=GETKJIN'>";
         }
     }
     #echo "<META HTTP-EQUIV='Refresh' Content='13; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";

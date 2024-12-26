@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2024 at 06:36 PM
+-- Generation Time: Dec 26, 2024 at 06:21 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -61,6 +61,30 @@ CREATE TABLE `nat_rjkj1` (
   `rjkj1_idssen_01` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `nat_rjkj1`
+--
+
+INSERT INTO `nat_rjkj1` (`idmain_rjkj1`, `rjkj1_nikpasien_01`, `rjkj1_namapasien_01`, `rjkj1_nikdokter_01`, `rjkj1_lokid_01`, `rjkj1_tglmasuk_01`, `rjkj1_status_01`, `rjkj1_idssen_01`) VALUES
+('2412250703151', '9271060312000001', 'Ardianto Putra', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-04', '2', '9f16aaf1-58f8-4959-ace2-bbcd73006dba'),
+('24122507031510', '9104223107000004', 'Dr. Alan Bagus Prasetya', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-05', '2', 'b90d6c3e-61cb-4b22-980f-e6c5940f38e1'),
+('24122507031511', '9104224606000005', 'Ghina Assyifa', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-05', '2', '4dcd8243-9a3a-48a1-a5f8-c9750debed05'),
+('24122507031512', '9104025209000006', 'Salsabilla Anjani Rizki', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-05', '2', 'e2b7e5a5-d62c-4eff-9bb7-a47a13e32cac'),
+('24122507031513', '9271060312000001', 'Ardianto Putra', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-06', '2', 'ca5587e5-7f3a-4113-9506-5bb2c884809c'),
+('24122507031514', '9204014804000002', 'Claudia Sintia', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-06', '2', '4d663a09-c325-4075-8566-6251778de8f7'),
+('24122507031515', '9104224509000003', 'Elizabeth Dior', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-06', '3', 'e7deec99-7fda-48ab-9fba-0e640b835fd4'),
+('24122507031516', '9104223107000004', 'Dr. Alan Bagus Prasetya', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-06', '2', 'd868c188-91eb-4d69-91d8-fcb293aff205'),
+('24122507031517', '9104224606000005', 'Ghina Assyifa', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-06', '2', 'b46fceb2-4aa1-400f-a3ec-5230c5de892e'),
+('24122507031518', '9104025209000006', 'Salsabilla Anjani Rizki', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-06', '2', 'cbf74ca1-8c19-44ca-91d6-72c7a1770763'),
+('2412250703152', '9204014804000002', 'Claudia Sintia', '7209061211900001', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-04', '3', ''),
+('2412250703153', '9104224509000003', 'Elizabeth Dior', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-04', '2', 'f5d9e864-1fd6-438f-936a-85741d1f7d23'),
+('2412250703154', '9104223107000004', 'Dr. Alan Bagus Prasetya', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-04', '2', '1795f0bc-6bdd-4e71-80f7-fb84480074c6'),
+('2412250703155', '9104224606000005', 'Ghina Assyifa', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-04', '2', '48a21fe1-7735-4c37-b8a4-bc8226fc237b'),
+('2412250703156', '9104025209000006', 'Salsabilla Anjani Rizki', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-04', '2', '0780cddb-1e7e-4e50-b9de-611309ffe307'),
+('2412250703157', '9271060312000001', 'Ardianto Putra', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-05', '2', '949195b8-79cf-405f-9525-a7d6a354bb6b'),
+('2412250703158', '9204014804000002', 'Claudia Sintia', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-05', '2', '6864457b-026a-494d-a5f3-4929cbb3d58b'),
+('2412250703159', '9104224509000003', 'Elizabeth Dior', '6408130207800005', '61becd6f-a241-4d69-bb11-c49e73f2be15', '2024-09-05', '2', '4b28e0da-02f3-4920-9ce6-6ab979b243a8');
+
 -- --------------------------------------------------------
 
 --
@@ -106,7 +130,7 @@ CREATE TABLE `sstoken` (
 --
 
 INSERT INTO `sstoken` (`token_isi_01`, `token_status_01`, `idmain_token_01`) VALUES
-('NGQwfDPifDaGMzQKu1OrZmqJhue7', '2', 'SS10001');
+('KkEZwA5LGAXkeyw8c3EJwpbGfhX4', '2', 'SS10001');
 
 -- --------------------------------------------------------
 

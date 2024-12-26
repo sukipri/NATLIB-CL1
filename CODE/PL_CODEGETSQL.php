@@ -34,13 +34,14 @@
 			
 						
 		#--------------LINE------------------------------#
+		$pl_timzone01 = "T$TIME_HTML5";
 		#SATUSEHAT SANBOX
 		$URI_TYPE = "SANDBOX";
 		$URI_DATA_AUTH = "https://api-satusehat-stg.dto.kemkes.go.id/oauth2/v1";
 		$URI_DATA_BASE = "https://api-satusehat-stg.dto.kemkes.go.id/fhir-r4/v1";
 		$URI_DATA_CONSENT = "https://api-satusehat.dto.kemkes.go.id/consent/v1";
 		$ID_UKP = "48b6a059-3e42-4ac0-8972-f96a60a606cc";
-		$ID_POLI = "e287edb4-f2d6-4528-ba35-774bf22e55b4";
+		$ID_POLI = "61becd6f-a241-4d69-bb11-c49e73f2be15";
 			#DATA KEYSTORE
 			$ORG_ID = "a33ade0f-a26c-45e0-a19f-e206e1ccc255";
 			$CLIENT_ID = "iT2YW5uENnrQ5SJEYXntkEEvHX1QY0AgxWmcT1X8f4VboG0d";

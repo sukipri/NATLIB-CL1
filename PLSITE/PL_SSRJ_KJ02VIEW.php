@@ -1,7 +1,7 @@
 <?PHP if($pl_nr_vusr01_sww  > 0){ ?>
 <div class="card">
  <div class="headimg"> <br>
-        <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #1 Kunjungan Awal Dataview Pending</a>
+        <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #1 IN-Progress Dataview Pending</a>
         &nbsp
         <a href="#" class="btn btn-dark btn-sm"> <i class="fas fa-bookmark"></i> Data Terikirim</a>
         &nbsp
@@ -18,14 +18,14 @@
         <td class="table-success">ID SS Pasien</td>
         <td>NIK Dokter</td>
         <td class="table-success">ID SS Dokter</td>
-        <td>Location</td>
+        <td>IDLOC.SS / IDKJ.SS</td>
         <td>Tgl Periksa</td>
         <td>Aksi</td>
     </tr>
     <?PHP 
         
         #DATA Kunjungan Awal
-        $pl_vrjkj1_sw = $CL_Q($CONN01," $CL_SL nat_rjkj1 WHERE rjkj1_status_01='1' order by rjkj1_tglmasuk_01 desc");
+        $pl_vrjkj1_sw = $CL_Q($CONN01," $CL_SL nat_rjkj1 WHERE rjkj1_status_01='2' order by rjkj1_tglmasuk_01 desc");
             while($pl_vrjkj1_sww = $CL_FAS($pl_vrjkj1_sw)){
                 #DATA DOKTER
                 $pl_sl_vdkt01_sw = $CL_Q($CONN01,"$SL dokter_idss_01 FROM nat_dokter WHERE dokter_nik_01='$pl_vrjkj1_sww[rjkj1_nikdokter_01]' ");
@@ -68,12 +68,12 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
         <td><?PHP echo  $data2_jsonfor_get['resource']['id']; ?> </td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_nikdokter_01'] ?></td>
         <td><?PHP echo  $pl_sl_vdkt01_sww['dokter_idss_01']; ?></td>
-        <td><?PHP echo $pl_vrjkj1_sww['rjkj1_lokid_01']; ?></td>
+        <td><?PHP echo $pl_vrjkj1_sww['rjkj1_lokid_01']."<br>".$pl_vrjkj1_sww['rjkj1_idssen_01']; ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_tglmasuk_01'] ?></td>
         <td>
-            <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ01VIEWP&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>";
+            <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ02VIEWP&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>";
                 if(@$SQL_SL($_GET['GETKJIN'])){
-                    echo"<META HTTP-EQUIV='Refresh' Content='0; URL=?PG_SA=PL_SSRJ_KJ01VIEWP&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]'>";
+                    echo"<META HTTP-EQUIV='Refresh' Content='0; URL=?PG_SA=PL_SSRJ_KJ02VIEWP&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]'>";
                 }
             ?>
         </td>
@@ -178,7 +178,7 @@ $data = array(
 		$data_string = urlencode(json_encode($data));
 		
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
 		curl_setopt( $curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',"Authorization: Bearer $pl_vsstoken_sww[token_isi_01]"));
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $encodedData);

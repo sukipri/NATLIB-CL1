@@ -141,9 +141,9 @@ $data = array(
 		#PROCCESSING UPDATE MYSQL
         if($result['resourceType']=="OperationOutcome"){
             include"NOTIF/NF_FAILED_01.php";
-            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='3' WHERE idmain_rjkj1='$IDRJKJ01' ");
+            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='31' WHERE idmain_rjkj1='$IDRJKJ01' ");
         }else{
-        $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='2',rjkj1_idssen_01='$get_json' WHERE idmain_rjkj1='$IDRJKJ01' ");
+            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='21' WHERE idmain_rjkj1='$IDRJKJ01' ");
         include"NOTIF/NF_SUCCESS_01.php";
 		echo "<META HTTP-EQUIV='Refresh' Content='1; URL=?PG_SA=PL_SSRJ_KJ02VIEW&GETKJIN=GETKJIN'>";
         }

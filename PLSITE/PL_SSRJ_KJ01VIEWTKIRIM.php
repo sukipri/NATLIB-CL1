@@ -1,8 +1,8 @@
 <?PHP if($pl_nr_vusr01_sww  > 0){ ?>
 <div class="card">
  <div class="headimg"> <br>
-        <a href='?PG_SA=?PG_SA=PL_SSRJ_KJ01VIEW' class="btn btn-secondary  mx-1"> << Kembali</a>
-        <a href="#" class="btn btn-dark btn-sm"> <i class='fas fa-folder'></i> Data Gagal Terikirim</a>
+        <a href='?PG_SA=PL_SSRJ_KJ01VIEW' class="btn btn-secondary  mx-1"> << Kembali</a>
+        <a href="#" class="btn btn-dark btn-sm"> <i class='fas fa-folder'></i> Data Kunjungan Awal Gagal Terikirim</a>
 </div>
 </div>
 <br>

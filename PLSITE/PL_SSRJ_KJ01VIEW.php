@@ -3,7 +3,7 @@
  <div class="headimg"> <br>
         <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #1 Kunjungan Awal Dataview Pending</a>
         &nbsp
-        <a href="?PG_SA=?PG_SA=PL_SSRJ_KJ01VIEWKIRIM" class="btn btn-dark btn-sm"> <i class="fas fa-bookmark"></i> Data Terikirim</a>
+        <a href="?PG_SA=PL_SSRJ_KJ01VIEWKIRIM" class="btn btn-dark btn-sm"> <i class="fas fa-bookmark"></i> Data Terikirim</a>
         &nbsp
         <a href="?PG_SA=PL_SSRJ_KJ01VIEWTKIRIM" class="btn btn-dark btn-sm"> <i class="fas fa-bookmark"></i> Data Gagal Terikirim</a>
 </div>

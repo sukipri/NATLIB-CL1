@@ -37,6 +37,8 @@
             <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ01">EN01.Kunjungan Baru</a></li>
             <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ01VIEW">EN01.View Kunjungan Baru</a></li>
             <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ02VIEW">EN02.View In-Progress</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ03VIEW">EN03.View Finish</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_HISVIEW">His.Data Sending</a></li>
           </ul>
         </li>
       </ul>

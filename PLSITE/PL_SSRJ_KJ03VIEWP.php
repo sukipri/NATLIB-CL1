@@ -1,9 +1,9 @@
 <?PHP if($pl_nr_vusr01_sww  > 0){ ?>
 <div class="card">
  <div class="headimg"> <br>
- <a href="?PG_SA=PL_SSRJ_KJ02VIEW" class="btn btn-dark btn-sm"> << Kembali</a>
+ <a href="?PG_SA=PL_SSRJ_KJ03VIEW" class="btn btn-dark btn-sm"> << Kembali</a>
     &nbsp
-        <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #2 IN-PROGRESS Dataview Proccessing</a>
+        <a href='#' class="btn btn-secondary  mx-1"><i class='fas fa-folder'></i> RJ #3 Finishing Dataview Proccessing</a>
 </div>
 </div>
 <?php
@@ -141,11 +141,11 @@ $data = array(
 		#PROCCESSING UPDATE MYSQL
         if($result['resourceType']=="OperationOutcome"){
             include"NOTIF/NF_FAILED_01.php";
-            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='31' WHERE idmain_rjkj1='$IDRJKJ01' ");
+            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='32' WHERE idmain_rjkj1='$IDRJKJ01' ");
         }else{
-            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='21' WHERE idmain_rjkj1='$IDRJKJ01' ");
+            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='22' WHERE idmain_rjkj1='$IDRJKJ01' ");
         include"NOTIF/NF_SUCCESS_01.php";
-		echo "<META HTTP-EQUIV='Refresh' Content='1; URL=?PG_SA=PL_SSRJ_KJ02VIEW&GETKJIN=GETKJIN'>";
+		echo "<META HTTP-EQUIV='Refresh' Content='1; URL=?PG_SA=PL_SSRJ_KJ03VIEW&GETKJIN=GETKJIN'>";
         }
     }
     #echo "<META HTTP-EQUIV='Refresh' Content='13; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";

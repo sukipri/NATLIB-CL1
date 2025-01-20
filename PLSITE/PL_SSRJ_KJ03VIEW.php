@@ -66,7 +66,7 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
         <td><?PHP echo  $data2_jsonfor_get['resource']['id']; ?> </td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_nikdokter_01'] ?></td>
         <td><?PHP echo  $pl_sl_vdkt01_sww['dokter_idss_01']; ?></td>
-        <td><?PHP echo $pl_vrjkj1_sww['rjkj1_lokid_01']."<br>".$pl_vrjkj1_sww['rjkj1_idssen_01']; ?></td>
+        <td><?PHP echo "<b>Kunjungan Awal</b><br>".$pl_vrjkj1_sww['rjkj1_idssen_01']; ?></td>
         <td><?PHP echo $pl_vrjkj1_sww['rjkj1_tglmasuk_01'] ?></td>
         <td>
             <?PHP echo"<a href='?PG_SA=PL_SSRJ_KJ03VIEWP&IDSSPOLI01=$pl_vrjkj1_sww[rjkj1_lokid_01]&IDSSDOK01=$pl_sl_vdkt01_sww[dokter_idss_01]&IDSSPSN01=$idps_json&TG01=$pl_vrjkj1_sww[rjkj1_tglmasuk_01]&GETKJ01=GETKJ01&IDRJKJ01=$pl_vrjkj1_sww[idmain_rjkj1]' class='btn btn-warning btn-sm'><i class='far fa-paper-plane'></i> Upload</a>";

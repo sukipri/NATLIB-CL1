@@ -94,9 +94,9 @@ $data =array(
             include"NOTIF/NF_FAILED_01.php";
             $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='32' WHERE idmain_rjkj1='$IDRJKJ01' ");
         }else{
-            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='22' WHERE idmain_rjkj1='$IDRJKJ01' ");
+            $update_rjkj_01 = $CL_Q($CONN01,"$UP nat_rjkj1 SET rjkj1_status_01='22',rjkj1_idssen1_01='$get_json' WHERE idmain_rjkj1='$IDRJKJ01' ");
         include"NOTIF/NF_SUCCESS_01.php";
-		 echo "<META HTTP-EQUIV='Refresh' Content='1; URL=?PG_SA=PL_SSRJ_KJ03VIEW&GETKJIN=GETKJIN'>";
+		    echo "<META HTTP-EQUIV='Refresh' Content='1; URL=?PG_SA=PL_SSRJ_KJ03VIEW&GETKJIN=GETKJIN'>";
         }
     }
     #echo "<META HTTP-EQUIV='Refresh' Content='13; URL=PL_HOME_01.php?PG_SA=PL_SS_R6_01_ENKUNJ01POST&TG01=$TG01&TG02=$TG01&IDGET01=$IDGET01&IDDOK01=$IDDOK01#$IDGET01'>";

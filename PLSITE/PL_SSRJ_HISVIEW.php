@@ -94,6 +94,8 @@ $idps_json =  $data2_jsonfor_get['resource']['id'];
                     echo"<span class='badge bg-secondary'>Masuk Ruang Dokter</span>";
                 }elseif($pl_vrjkj1_sww['rjkj1_status_01']=="22"){
                     echo"<span class='badge bg-secondary'>Condition #1</span>";
+                }elseif($pl_vrjkj1_sww['rjkj1_status_01']=="32"){
+                    echo"<span class='badge bg-dark'>Gagal Condition #1</span>";
                 }
          ?>
          </td>

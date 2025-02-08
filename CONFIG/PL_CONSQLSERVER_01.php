@@ -7,6 +7,7 @@
 	"PWD"=>"7@kkum");
 	$connsrv = sqlsrv_connect( $serverName, $connectionInfo);
 	if($connsrv) {
+		$syn_data  = "2";
 		/*
 			echo "Koneksi Berhasil.<br />";
 			$pl_ctr_vuser01_sw = sqlsrv_query($connsrv,"SELECT PasienNomorRM,PasienNama FROM Citarum.dbo.TPasien WHERE PasienNomorRM='730305'");
@@ -14,7 +15,8 @@
 			echo $pl_ctr_vuser01_sww['PasienNama'];
 		*/
 	}else{
-		echo "Connection could not be established.<br />";
+		$syn_data  = "1";
+		#echo "Connection could not be established.<br />";
 		die( print_r( sqlsrv_errors(), true));
 	}
 

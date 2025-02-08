@@ -49,10 +49,12 @@
 		
 		//..SQLSRV...//
         /*   */
+            if($syn_data = "2"){
             $CLS_Q = @sqlsrv_query;
             $CLS_FA = @sqlsrv_fetch_array;
             $CLS_NR = @sqlsrv_num_rows;
             $CLS_FR = @mssql_fetch_row;
+            }
       
        
 

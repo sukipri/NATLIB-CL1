@@ -34,7 +34,8 @@
            <i class="fas fa-hashtag"></i> Rawat Jalan
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ01">EN01.Kunjungan Baru</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ01">EN01.Uplaod RJ *Upload CSV</a></li>
+            <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ01SL">EN01.Uplaod RJ *Data Server Local</a></li>
             <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ01VIEW">EN01.View Kunjungan Baru</a></li>
             <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ02VIEW">EN02.View In-Progress</a></li>
             <li><a class="dropdown-item" href="?PG_SA=PL_SSRJ_KJ03VIEW">EN03.View Finish</a></li>

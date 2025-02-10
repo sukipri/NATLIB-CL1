@@ -89,12 +89,12 @@
     </div>
     <br>
     <?PHP 
-     if(isset($_GET['UPDKT01'])){
-         $txt_isi = "https://fhir.kemkes.go.id/id/nik|$pl_srv_vw_vdkt01_sww[PelakuNik]";
+     if(isset($_GET['UPDKT01SRV'])){
+         $txt_isi2 = "https://fhir.kemkes.go.id/id/nik|$pl_srv_vw_vdkt01_sww[PelakuNik]";
          #-----------#
-         $curl = curl_init();
-         curl_setopt_array($curl, array(
-         CURLOPT_URL => "$URI_DATA_BASE/Practitioner?identifier=$txt_isi",
+         $curl2 = curl_init();
+         curl_setopt_array($curl2, array(
+         CURLOPT_URL => "$URI_DATA_BASE/Practitioner?identifier=$txt_isi2",
          CURLOPT_RETURNTRANSFER => true,
          CURLOPT_ENCODING => "",
          CURLOPT_MAXREDIRS => 10,
@@ -107,19 +107,19 @@
            ),
           ));
      
-         $response = curl_exec($curl);
-         $en_json = json_encode($response);
-         $data = json_decode($en_json, true);
-         $data_fetch = json_decode($response, true);
+         $response2 = curl_exec($curl2);
+         $en_json2 = json_encode($response2);
+         $data2 = json_decode($en_json2, true);
+         $data_fetch2 = json_decode($response2, true);
          
          #echo"<textarea rows=10 cols=70>$data</textarea><hr>";
          #echo"<code>$data</code>";
-         $data_jsonfor =  $data_fetch['entry'];
-     foreach($data_jsonfor as $data_jsonfor_get){ 
-         $txt_jsondata = $data_jsonfor_get['resource']['id'];
+         $data_jsonfor2 =  $data_fetch2['entry'];
+     foreach($data_jsonfor2 as $data_jsonfor_get2){ 
+         $txt_jsondata2 = $data_jsonfor_get2['resource']['id'];
      echo"  <div class='input-group mb-3'>
         <span class='input-group-text' id='basic-addon1'>ID SatuSehat</span>
-         <input type='text' class='form-control form-control-sm' value=$txt_jsondata required name='dokter_idss_01'>
+         <input type='text' class='form-control form-control-sm' value=$txt_jsondata2 required name='dokter_idss_01'>
     </div>";
      
       } 
@@ -176,7 +176,7 @@
                             while($pl_ls_vdkt01_sww = $CL_FAS($pl_ls_vdkt01_sw)){
                     ?>
                     <tr>
-                        <td><?PHP echo "<a href='?PG_SA=PL_SSPRACIN&IDDOK01=$pl_ls_vdkt01_sww[idmain_dokter]&UPDKT01SRV=UPDKT01SRV'>".$pl_ls_vdkt01_sww['dokter_nik_01']."</a>"; ?></td>
+                        <td><?PHP echo "<a href='?PG_SA=PL_SSPRACIN&IDDOK01=$pl_ls_vdkt01_sww[idmain_dokter]&UPDKT01=UPDKT01'>".$pl_ls_vdkt01_sww['dokter_nik_01']."</a>"; ?></td>
                         <td><?PHP echo $pl_ls_vdkt01_sww['dokter_idss_01'] ?></td>
                         <td><?PHP echo $pl_ls_vdkt01_sww['dokter_nama_01'] ?></td>
                     </tr>
@@ -198,7 +198,7 @@
                                     while($pl_srv_vdkt01_sww = $CLS_FA($pl_srv_vdkt01_sw)){                            
                             ?>
                             <tr class="">
-                                <td><?PHP echo"<a href='?PG_SA=PL_SSPRACIN&IDDOK01=$pl_srv_vdkt01_sww[PelakuKode]&UPDKT01=UPDKT01'>". $pl_srv_vdkt01_sww['PelakuNik']."</a>"; ?></td>
+                                <td><?PHP echo"<a href='?PG_SA=PL_SSPRACIN&IDDOK01=$pl_srv_vdkt01_sww[PelakuKode]&UPDKT01SRV=UPDKT01SRV'>". $pl_srv_vdkt01_sww['PelakuNik']."</a>"; ?></td>
                                 <td><?PHP echo $pl_srv_vdkt01_sww['PelakuNama']; ?></td>
                                 <td>-</td>
                             </tr>

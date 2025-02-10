@@ -31,12 +31,6 @@
 				$pl_vw_vdkt01_sw = $CL_Q($CONN01,"$CL_SL nat_dokter WHERE idmain_dokter='$IDDOK01'");
                     $pl_vw_vdkt01_sww = $CL_FAS($pl_vw_vdkt01_sw);
 
-				#DATA DOKTER DATASET LOCAL SERVER
-				if($syn_data = "2"){
-						$pl_srv_vw_vdkt01_sw = $CLS_Q($connsrv,"$CL_SL Citarum.dbo.TPelaku WHERE PelakuKode='$IDDOK01'");
-						$pl_srv_vw_vdkt01_sww = $CLS_FA($pl_srv_vw_vdkt01_sw);
-					}
-
 			
 						
 		#--------------LINE------------------------------#

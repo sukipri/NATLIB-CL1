@@ -41,15 +41,15 @@
 		$data = json_decode($en_json, true);
 		$data_fetch = json_decode($response, true);
 
-		echo"<code>$data</code><hr>";
+		echo"<code>$data</code>";
 		echo"<br>";
 		$data_jsonfor =  $data_fetch['entry'];
 
         foreach($data_jsonfor as $data_jsonfor_get){ #FOREACH ENTRY
 
             echo"<b>ID SS</b> ".$data_jsonfor_get['resource']['id']."<br>";
-            $data_jsonfor_name = $data_jsonfor_get['resource']['name'];
-           echo "<b>Nama Poli</b> ".$data_jsonfor_name;
+            $data_jsonfor_name = $data_jsonfor_get['resource']['name']."";
+           echo "<b>Nama Poli</b> ".$data_jsonfor_name."<br>";
         }
         
 

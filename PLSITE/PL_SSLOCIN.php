@@ -26,13 +26,14 @@
     #VARIABLE
     $txt_locanama = @$SQL_SL($_POST['txt_locanama']);
     if(isset($_POST['btn_simpanloc'])){
+        
 
         $data = [
             "resourceType" => "Location",
             "identifier" => [
                 [
                     "system" =>
-                        "http://sys-ids.kemkes.go.id/location/$ID_ORGLOC",
+                        "http://sys-ids.kemkes.go.id/location/$ORG_ID",
                     "value" => "$NM_ORGLOC",
                 ],
             ],

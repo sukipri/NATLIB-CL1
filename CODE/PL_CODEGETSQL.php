@@ -40,7 +40,8 @@
 		$URI_DATA_AUTH = "https://api-satusehat-stg.dto.kemkes.go.id/oauth2/v1";
 		$URI_DATA_BASE = "https://api-satusehat-stg.dto.kemkes.go.id/fhir-r4/v1";
 		$URI_DATA_CONSENT = "https://api-satusehat.dto.kemkes.go.id/consent/v1";
-		$ID_UKP = "48b6a059-3e42-4ac0-8972-f96a60a606cc";
+		$ID_ORGLOC = "af48ee85-2a60-4cbc-a9dd-d2142b7219d5"; 
+		$NM_ORGLOC = "SS manikaaestheticc";
 		$ID_POLI = "61becd6f-a241-4d69-bb11-c49e73f2be15";
 			#DATA KEYSTORE
 			$ORG_ID = "a33ade0f-a26c-45e0-a19f-e206e1ccc255";

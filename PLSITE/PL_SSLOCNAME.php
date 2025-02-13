@@ -11,7 +11,7 @@
 	<div class="input-group mb-3" style="max-width:30rem;">
 	  <input type="text" class="form-control" required required name="txt_src_ssloc01" autocomplete="off" placeholder="Masukan Nama Klinik........">
 	  <button class="btn btn-success btn-sm" name="btn_src_ssloc01">CARI</button>
-	  <a href="?PG_SA=PL_SSPRACIN" class="btn btn-dark btn-sm"><i class="fas fa-plus"></i> Set Poli</a>
+	  <a href="?PG_SA=PL_SSLOCIN" class="btn btn-dark btn-sm"><i class="fas fa-plus"></i> Set Poli</a>
 	</div>
 </form>
 <!--  -->
